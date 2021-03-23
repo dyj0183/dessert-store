@@ -1,1 +1,9 @@
-<p>menu-item works!</p>
+<a href="#" class="list-group-item clearfix" (click)="showMenuDetail()">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading" class="text-primary" style="font-size: 30px;">{{ menuItem.name }}</h4>
+  </div>
+  <span class="pull-right">
+    <img src={{menuItem.imageUrl}} alt={{menuItem.imageUrl}} style="max-width: 200px; max-height: 200px;">
+  </span>
+
+</a>

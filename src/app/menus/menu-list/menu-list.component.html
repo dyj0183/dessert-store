@@ -4,8 +4,8 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-xs-12">
-        <app-menu-item>
-
+        <!-- use property binding here to pass the menu to the child component "contact-item" and bind with the property "menuItem" -->
+        <app-menu-item *ngFor="let menu of menus" [menuItem]="menu">
         </app-menu-item>
       </div>
     </div>
