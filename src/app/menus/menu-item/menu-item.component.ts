@@ -17,8 +17,8 @@ export class MenuItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showMenuDetail() {
-    this.menuService.menuEmitter.next(this.menuItem); // we use "next" because we are using observable "Subject" to pass data around
-  }
+  //showMenuDetail() {
+   // this.menuService.menusUpdated.next(this.menuItem); // we use "next" because we are using observable "Subject" to pass data around
+  //}
 
 }

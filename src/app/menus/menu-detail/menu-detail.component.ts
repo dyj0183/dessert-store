@@ -16,11 +16,11 @@ export class MenuDetailComponent implements OnInit, OnDestroy {
   constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
-    this.detailSubscription = this.menuService.menuEmitter.subscribe(
-      (menuItem: Menu) => {
-        this.menuDetail = menuItem;
-      }
-    );
+    // this.detailSubscription = this.menuService.menusUpdated.subscribe(
+    //   (menuItem: Menu) => {
+    //     this.menuDetail = menuItem;
+    //   }
+    // );
   }
 
   ngOnDestroy() {

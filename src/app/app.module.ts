@@ -6,6 +6,7 @@ import { MenuListComponent } from './menus/menu-list/menu-list.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 import { MenuDetailComponent } from './menus/menu-detail/menu-detail.component';
 import { MenusComponent } from './menus/menus.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenusComponent } from './menus/menus.component';
     MenusComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
