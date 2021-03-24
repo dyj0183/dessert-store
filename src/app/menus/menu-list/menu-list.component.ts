@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { fromEventPattern, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Menu } from '../menu.model';
-import { MENULIST } from '../MENULIST';
 import { MenuService } from '../menu.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class MenuListComponent implements OnInit, OnDestroy {
   constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
-    // this.menus = MENULIST;
     this.menuService.getMenus(); // call this function in the service to grab the menus data from our backend
 
     this.subscription = this.menuService.menusUpdated.subscribe((menuData: Menu[]) => {

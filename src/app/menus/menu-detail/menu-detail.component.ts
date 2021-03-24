@@ -19,7 +19,6 @@ export class MenuDetailComponent implements OnInit, OnDestroy {
     this.detailSubscription = this.menuService.menuClicked.subscribe(
       (menuItem: Menu) => {
         this.menuDetail = menuItem;
-        // console.log(this.menuDetail);
       }
     );
   }

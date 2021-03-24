@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from '../menu.model';
-import { Subject } from 'rxjs';
 import { MenuService } from '../menu.service';
 
 @Component({
