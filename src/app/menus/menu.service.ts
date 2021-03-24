@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class MenuService {
   menus: Menu[] = []; // create an empty array with type Menu
   menusUpdated = new Subject<Menu[]>(); // create a new Subject
+  menuClicked = new Subject<Menu>();
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +21,7 @@ export class MenuService {
     // Angular httpClient uses observables. we will get back the object from our backend including "message" & "Menu[]"
     this.http.get<{message: string, menus: Menu[]}>('http://localhost:3000/api/menus').subscribe((menuData) => {
       this.menus = menuData.menus; // assign the data we got from backend to our service local variable
-      this.menusUpdated.next(this.menus);
+      this.menusUpdated.next(this.menus); // emit "this.menus"
     });
   }
 }
