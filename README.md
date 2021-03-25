@@ -6,9 +6,7 @@ This software allows users to navigate through different homemade desserts on th
 
 The purpose of this software is to provide a platform for people to purchase homemade desserts in a quick and esay way.
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/d-00cFzKVVU)
 
 # Development Environment
 
