@@ -12,7 +12,7 @@ The purpose of this software is to provide a platform for people to purchase hom
 
 # Development Environment
 
-* Frontend: Angular
+* Frontend: Angular (This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.)
 * Backedn: Nodejs & Express
 * Database: MongoDB
 * Typescript
@@ -23,43 +23,12 @@ The purpose of this software is to provide a platform for people to purchase hom
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Angular Documentation](https://angular.io/docs)
+* [Node.js Documentation](https://nodejs.org/en/docs/)
+* [MongoDB Documentation](https://docs.mongodb.com/manual/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
-
-
-
-# DessertStore
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Implement User Authentication
+* Create functionalities to allow admins to create, update, and delete
+* Implement PayPal to allow users to pay online
