@@ -9,6 +9,7 @@ export const MENULIST: Menu[] = [
     id: '0',
     name: 'Chocolate Cake',
     description: 'Super Delicious with double chocolate added!',
+    price: "9.99",
     imageUrl: '../../assets/images/menus/chocolate-cake.jpg',
   },
   // index 1
@@ -16,6 +17,7 @@ export const MENULIST: Menu[] = [
     id: '1',
     name: 'Egg Tart',
     description: 'Best options for party dessert!',
+    price: "8.99",
     imageUrl: '../../assets/images/menus/egg-tart.jpg',
   },
   // index 2
@@ -23,6 +25,7 @@ export const MENULIST: Menu[] = [
     id: '2',
     name: 'Pudding',
     description: 'Something you will not be able to stop eating!',
+    price: "6.99",
     imageUrl: '../../assets/images/menus/pudding.jpg',
   },
 ];
