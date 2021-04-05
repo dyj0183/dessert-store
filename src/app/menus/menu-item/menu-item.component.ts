@@ -9,6 +9,7 @@ import { MenuService } from '../menu.service';
 })
 export class MenuItemComponent implements OnInit {
   @Input() menuItem: Menu; // without using @input, this will not be bindable from menu-list because it is only available in this component. @input is a "decorator"
+  menuId: string = "1";
 
   // inject MenuService in the constructor so we can use it
   constructor(private menuService: MenuService) {}
