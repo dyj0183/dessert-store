@@ -59,10 +59,11 @@ export class MenuService {
 
     // send data to the backend
     this.http
-      .post<{ message: string }>('http://localhost:3000/api/menus', menu)
+      .post<{ message: string, menuId: string }>('http://localhost:3000/api/menus', menu)
       .subscribe((responseData) => {
         console.log(responseData.message);
-
+        const menuId = responseData.menuId;
+        menu.id = menuId;
         // only push this to our local variable if we send data to backend successfully
         this.menus.push(menu);
         this.menusUpdated.next(this.menus);

@@ -22,23 +22,14 @@ export class MenuDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.detailSubscription = this.menuService.menuClicked.subscribe(
-    //   (menuItem: Menu) => {
-    //     this.menuDetail = menuItem;
-    //   }
-    // );
     this.route.params.subscribe((params: Params) => {
       this.id = params['id']; // I can do params.id as well
       this.menuDetail = this.menuService.getMenu(this.id);
     });
   }
 
-  onDelete(menuId: string) {
-    this.menuService.deleteMenu(menuId);
+  onDelete() {
+    this.menuService.deleteMenu(this.id);
     this.router.navigateByUrl('/menus');
   }
-
-  // ngOnDestroy() {
-  //   this.detailSubscription.unsubscribe(); // must unsubscribe after we are done, otherwise we will havew memory leak
-  // }
 }

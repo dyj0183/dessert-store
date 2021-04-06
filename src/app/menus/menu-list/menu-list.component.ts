@@ -19,6 +19,7 @@ export class MenuListComponent implements OnInit, OnDestroy {
 
     this.subscription = this.menuService.menusUpdated.subscribe((menuData: Menu[]) => {
       this.menuList = menuData; // assign the backend menu data to the local variable menus
+      console.log(this.menuList);
     })
   }
 

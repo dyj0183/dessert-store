@@ -58,5 +58,7 @@ export class MenuEditComponent implements OnInit {
     this.router.navigateByUrl('/menus');
   }
 
-  onCancel() {}
+  onCancel() {
+    this.router.navigateByUrl('/menus');
+  }
 }

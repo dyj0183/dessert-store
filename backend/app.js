@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*"); // this is important because server can't communicate with client if they are on different hosts (3000 & 4200, will get the CORS error. The start* sign means allow all domains to access the resources
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); // even though we allow all the domains to access at the above line, here we can restrict the headers in the domains
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS"); // options are sent prior to POST, so we need it here
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS"); // options are sent prior to POST, so we need it here
   next(); // so that it will call the next middleware
 });
 
@@ -34,11 +34,12 @@ app.post("/api/menus", (req, res, next) => {
     price: req.body.price,
     imageUrl: req.body.imageUrl
   });
-  menu.save(); // by mongoose package
-
-  res.status(201).json({
-    message: "New Menu added to MongoDB successfully"
-  });
+  menu.save().then(createdMenu => {
+    res.status(201).json({
+      message: "New Menu added to MongoDB successfully",
+      menuId: createdMenu._id,
+    });
+  }); // by mongoose package
 });
 
 // we can pass as many as arguments as we want, the first argument is the path we want to filter down. only this path will lead to this middleware
@@ -58,7 +59,9 @@ app.get('/api/menus', (req, res, next) => {
 });
 
 app.delete('/api/menus/:id', (req, res, next) => {
-  Menu.deleteOne({_id: req.params.id}).then(result => {
+  Menu.deleteOne({
+    _id: req.params.id
+  }).then(result => {
     console.log(result);
     res.status(200).json({
       message: 'Menu was deleted successfully',
