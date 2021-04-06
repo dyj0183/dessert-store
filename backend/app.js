@@ -58,6 +58,17 @@ app.get('/api/menus', (req, res, next) => {
     }); // return all results from MongoDB
 });
 
+app.put('/api/menus/:id', (req, res, next) => {
+  const menu = req.body
+  console.log(req.body);
+  Menu.updateOne({_id: req.params.id}, menu).then(result => {
+    console.log(result);
+    res.status(200).json({
+      message: "Updated successfully!"
+    })
+  });
+})
+
 app.delete('/api/menus/:id', (req, res, next) => {
   Menu.deleteOne({
     _id: req.params.id

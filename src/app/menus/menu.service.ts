@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class MenuService {
   menus: Menu[] = []; // create an empty array with type Menu
   menusUpdated = new Subject<Menu[]>(); // create a new Subject
-  menuClicked = new Subject<Menu>(); // use this to pass data from menu-item to menu-detail
+  // menuClicked = new Subject<Menu>(); // use this to pass data from menu-item to menu-detail
 
   constructor(private http: HttpClient) {}
 
@@ -70,6 +70,18 @@ export class MenuService {
       });
   }
 
+  updateMenu(updatedMenu: Menu) {
+    this.http.put('http://localhost:3000/api/menus/' + updatedMenu.id, updatedMenu)
+    .subscribe(response => {
+      // return the updated Menus, first replace the old one with updated one
+      const updatedMenus = this.menus;
+      const oldMenuIndex = updatedMenus.findIndex(menu => menu.id === updatedMenu.id);
+      updatedMenus[oldMenuIndex] = updatedMenu; // replace old one with new one
+      this.menus = updatedMenus;
+      this.menusUpdated.next(this.menus); // emit this to the menu list
+    });
+  }
+
   deleteMenu(menuId: string) {
     this.http
       .delete('http://localhost:3000/api/menus/' + menuId)
@@ -80,6 +92,4 @@ export class MenuService {
         console.log('Deleted!');
       });
   }
-
-  updateMenu() {}
 }

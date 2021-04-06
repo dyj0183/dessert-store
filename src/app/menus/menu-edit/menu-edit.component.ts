@@ -31,6 +31,7 @@ export class MenuEditComponent implements OnInit {
         return;
       } else {
         this.editMode = true;
+        this.menu = this.menuService.getMenu(this.menuId); // if we are editing the existing menu, we want to grab the menu to prepopulate the data on the form
       }
     });
   }
@@ -49,7 +50,8 @@ export class MenuEditComponent implements OnInit {
 
     // if the edit mode is true, then we want to call the edit function, otherwise, call the addContact function
     if (this.editMode == true) {
-      // this.menuService.updateMenu(this.originalContact, this.newContact);
+      this.newMenu.id = this.menuId; // update the new form with original ID
+      this.menuService.updateMenu(this.newMenu);
     } else {
       this.menuService.addMenu(this.newMenu);
     }
