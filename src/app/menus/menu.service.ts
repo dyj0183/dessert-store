@@ -30,13 +30,13 @@ export class MenuService {
   }
 
   // add a single menu to the MongoDB database
-  addMenu(name: string, description: string, price: string, imageUrl: string) {
+  addMenu(newMenu: Menu) {
     const menu: Menu = {
-      id: null,
-      name: name,
-      description: description,
-      price: price,
-      imageUrl: imageUrl,
+      id: newMenu.id,
+      name: newMenu.name,
+      description: newMenu.description,
+      price: newMenu.price,
+      imageUrl: "../../assets/images/menus/" + newMenu.imageUrl,
     };
 
     // send data to the backend
@@ -49,5 +49,9 @@ export class MenuService {
         this.menus.push(menu);
         this.menusUpdated.next(this.menus);
       });
+  }
+
+  updateMenu() {
+
   }
 }

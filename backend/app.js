@@ -31,12 +31,13 @@ app.post("/api/menus", (req, res, next) => {
   const menu = new Menu({
     name: req.body.name,
     description: req.body.description,
-    price: req.body.price
+    price: req.body.price,
+    imageUrl: req.body.imageUrl
   });
   menu.save(); // by mongoose package
 
   res.status(201).json({
-    message: "Menu added successfully"
+    message: "New Menu added to MongoDB successfully"
   });
 });
 
