@@ -12,7 +12,8 @@ const appRoutes: Routes = [
     component: MenusComponent,
     children: [
       { path: 'new', component: MenuEditComponent },
-      { path: '1', component: MenuDetailComponent},
+      { path: ':id', component: MenuDetailComponent},
+      { path: ':id/edit', component: MenuEditComponent},
     ],
   },
 ];

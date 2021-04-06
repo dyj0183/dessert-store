@@ -57,5 +57,14 @@ app.get('/api/menus', (req, res, next) => {
     }); // return all results from MongoDB
 });
 
+app.delete('/api/menus/:id', (req, res, next) => {
+  Menu.deleteOne({_id: req.params.id}).then(result => {
+    console.log(result);
+    res.status(200).json({
+      message: 'Menu was deleted successfully',
+    });
+  });
+});
+
 // export this entire express app, this will also return all the middlewares we created
 module.exports = app;

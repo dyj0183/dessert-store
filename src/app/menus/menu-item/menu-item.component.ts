@@ -9,7 +9,7 @@ import { MenuService } from '../menu.service';
 })
 export class MenuItemComponent implements OnInit {
   @Input() menuItem: Menu; // without using @input, this will not be bindable from menu-list because it is only available in this component. @input is a "decorator"
-  menuId: string = "1";
+  menuId: string;
 
   // inject MenuService in the constructor so we can use it
   constructor(private menuService: MenuService) {}
@@ -17,6 +17,6 @@ export class MenuItemComponent implements OnInit {
   ngOnInit(): void {}
 
   showMenuDetail() {
-    this.menuService.menuClicked.next(this.menuItem); // we use "next" because we are using observable "Subject" to pass data around
+    // this.menuService.menuClicked.next(this.menuItem); // we use "next" because we are using observable "Subject" to pass data around
   }
 }

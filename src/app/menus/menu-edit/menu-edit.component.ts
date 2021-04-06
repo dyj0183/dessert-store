@@ -40,7 +40,7 @@ export class MenuEditComponent implements OnInit {
 
     // create a new menu
     this.newMenu = new Menu(
-      '100',
+      '1',
       value.name,
       value.description,
       value.price,
