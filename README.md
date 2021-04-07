@@ -6,7 +6,7 @@ This software allows users to navigate through different homemade desserts on th
 
 The purpose of this software is to provide a platform for people to purchase homemade desserts in a quick and esay way.
 
-[Software Demo Video](https://youtu.be/d-00cFzKVVU)
+[Software Demo Video](https://youtu.be/zZyY3oxAtzI)
 
 # Development Environment
 
@@ -15,7 +15,7 @@ The purpose of this software is to provide a platform for people to purchase hom
 * Database: MongoDB
 * Typescript
 * JavaScript
-* HTML & CSS
+* HTML & CSS (Bootstrap)
 * Development Tool: Visual Studio Code
 * Version Control: GitHub
 
@@ -28,5 +28,5 @@ The purpose of this software is to provide a platform for people to purchase hom
 # Future Work
 
 * Implement User Authentication
-* Create functionalities to allow admins to create, update, and delete
-* Implement PayPal to allow users to pay online
+* Implement PayPal to allow customers to pay online
+* Make the website look good on all sizes of screens
